@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('index', PaceController::class, ['except' => ['show']]);
+Route::resource('/index', PaceController::class, 'index');
