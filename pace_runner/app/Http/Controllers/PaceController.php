@@ -13,7 +13,9 @@ class PaceController extends Controller
      */
     public function index()
     {
-        //
+        return view(
+            'pace.index'
+        );
     }
 
     /**
