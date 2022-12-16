@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フルマラソン　ペース表</title>
+</head>
+<body align="center">
+    <h1>マラソンペース計算</h1>
+    <h2>マラソンペース計算</h2>
+    <form action="main.php" method="post">
+        総距離(km)<br>
+        <input type="text" name="distance"><br>
+        平均ペース（例：6:30）<br>
+        <input type="time" name="pace"><br>
+        何キロまで？(km)<br>
+        <input type="text" name="paceDistance"><br>
+        目標タイム<br>
+        <input type="radio" name="targetTime" value="3">サブ3
+        <input type="radio" name="targetTime" value="3.5">サブ3.5
+        <input type="radio" name="targetTime" value="4">サブ4
+        <input type="radio" name="targetTime" value="4.5">サブ4.5
+        <input type="radio" name="targetTime" value="5">サブ5<br>
+        <input type="submit" value="送信">
+    </form>
+</body>
+</html>
