@@ -1,16 +1,25 @@
 <?php
+// 総距離
 $distance = $_POST['distance'];
+// ペース
 $pace = $_POST['pace'];
+// 時間を分と秒に分ける
 $tArry = explode(":",$time);
-$date = $pace * $distance;
-$date = date("Y/m/d H:i:s",$pace);
+// 何キロまでペースを維持するか
 $paceDistance = $_POST['paceDistance'];
+// 目標タイム
 $targetTime = $_POST['targetTime'];
+// ゴールタイム
 $goalTime = MultTime($pace,$distance);
-$time = $pace * $paceDistance;
-echo "総距離 ", $distance, "km。<br>";
-echo "ペース、km/", $distance, "分<br>";
-echo "タイム ", $goalTime, "km。<br>";
+// 総距離から維持するペースの距離を引いた残り
+$residue = $distance - $paceDistance;
+
+echo "総距離 ", $distance, "km。<br><br>";
+echo "ペース、km/", $pace, "分<br>";
+echo "何キロまで？ ", $paceDistance, "km。<br>";
+
+echo "目標タイム ", $targetTime, "時間切り<br>";
+echo "タイム ", $goalTime, "<br>";
 function MultTime($time,$kake){
     $tArry=explode(":",$time);
     $secnd=round($tArry[1]/60,2);//秒→分
