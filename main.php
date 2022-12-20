@@ -8,30 +8,39 @@ $tArry = explode(":",$time);
 // 何キロまでペースを維持するか
 $paceDistance = $_POST['paceDistance'];
 // 目標タイム
-$targetTime = $_POST['targetTime'];
+$target = $_POST['targetTime'];
 // 目標タイムを秒に変換
-if ($targetTime = 3) {
+if ($target == 3) {
     $seconds = 10800;
-}elseif($targetTime = 3.5) {
+    $targetTime = date("H:i:s",mktime(0,0,$seconds));
+}elseif($target == 3.5) {
     $seconds = 12600;
-}elseif($targetTime = 4) {
+    $targetTime == date("H:i:s",mktime(0,0,$seconds));
+}elseif($target == 4) {
     $seconds = 14400;
-}elseif($targetTime = 4.5) {
+    $targetTime = date("H:i:s",mktime(0,0,$seconds));
+}elseif($target == 4.5) {
     $seconds = 16200;
-}elseif($targetTime = 5) {
+    $targetTime = date("H:i:s",mktime(0,0,$seconds));
+}elseif($target == 5) {
     $seconds = 18000;
+    $targetTime = date("H:i:s",mktime(0,0,$seconds));
 }
 // ゴールタイム
 $goalTime = MultTime($pace,$distance);
 // 総距離から維持するペースの距離を引いた残り
 $residue = $distance - $paceDistance;
+// ペースタイム
+$paceTime = MultTime($pace,$paceDistance);
+$a = $targetTime - $paceTime;
 
 echo "総距離 ", $distance, "km。<br><br>";
 echo "ペース、km/", $pace, "分<br>";
 echo "何キロまで？ ", $paceDistance, "km。<br>";
+echo $paceDistance. "キロまで ", $paceTime, "分<br>";
 
 echo "残り距離 ", $residue, "km。<br><br>";
-echo "目標タイム ", $targetTime, "時間切り<br>";
+echo "目標タイム ", $target, "時間切り<br>";
 echo "タイム ", $goalTime, "<br>";
 function MultTime($time,$kake){
     $tArry=explode(":",$time);
